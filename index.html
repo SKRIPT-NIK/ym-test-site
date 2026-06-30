@@ -9,11 +9,11 @@
       (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
-        k=e.createElement(t),
-        a=e.getElementsByTagName(t), // <-- ИСПРАВЛЕНИЕ: берем первый элемент, а не всю коллекцию
-        k.async=1,
-        k.src=r,
-        a.parentNode.insertBefore(k,a)
+        k=e.createElement(t);
+        a=e.getElementsByTagName(t); // <-- КРИТИЧНО:
+        k.async=1;
+        k.src=r;
+        a.parentNode.insertBefore(k,a);
       })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
       ym(110289140, "init", {
@@ -28,23 +28,12 @@
 
     <style>
       body { font-family: Arial, sans-serif; padding: 40px; color: #333; }
-      h1 { color: #2c3e50; }
-      .status { color: #27ae60; font-weight: bold; }
-      .error { color: #e74c3c; font-weight: bold; }
+      .warning { color: #e74c3c; font-weight: bold; }
     </style>
   </head>
   <body>
     <h1>Тестовая страница для YM Logs API</h1>
     <p>Этот файл <code>index.html</code> успешно загружен на GitHub Pages.</p>
-    
-    <!-- Изменил текст статуса, чтобы он не вводил в заблуждение -->
-    <p class="error">⚠️ Не запускай script.py, пока не увидишь в консоли браузера сообщения "YM: Counter ... initialized".</p>
-    <p>Инструкция по проверке:</p>
-    <ol>
-      <li>Открой эту страницу в режиме Инкогнито.</li>
-      <li>Добавь к адресу <code>?_ym_debug=1</code>.</li>
-      <li>Нажми F12 → вкладка Console.</li>
-      <li>Убедись, что нет красных ошибок и есть зеленые строки YM.</li>
-    </ol>
+    <p class="warning">⚠️ Ждем разблокировки push и проверки консоли.</p>
   </body>
 </html>
